@@ -118,7 +118,126 @@ roboC.sayHi("Tadek");
 
 //Figures
 
-var Rectangle
+var Rectangle = function(sideA, sideB){
+    this.sideA = sideA;
+    this.sideB = sideB;
+}
+
+Rectangle.prototype.getArea = function () {
+    return this.sideA * this.sideB;
+}
+
+Rectangle.prototype.getPerimiter = function () {
+    return (this.sideA + this.sideB)*2;
+}
+
+var rectangle1= new Rectangle(2,4);
+var rectangle2 = new Rectangle(4,1.1);
+
+console.log(rectangle1.getArea());
+console.log(rectangle2.getArea());
+console.log(rectangle1.getPerimiter());
+console.log(rectangle2.getPerimiter());
+
+//Calculator
+
+var Calculator = function () {
+    this.table = [];
+}
+
+Calculator.prototype.add = function (num1, num2) {
+    var result = num1 + num2;
+    this.table.push("added " + num1 + " to " + num2 + " got " + result);
+    return result;
+}
+
+Calculator.prototype.multiply = function (num1, num2) {
+    var result = num1 * num2;
+    this.table.push("multiplied " + num1 + " with " + num2 + " got " + result);
+    return result;
+}
+
+Calculator.prototype.substract = function (num1, num2) {
+    var result = num1 - num2;
+    this.table.push("substracted " + num1 + " from " + num2 + " got " + result);
+    return result;
+}
+
+Calculator.prototype.divide = function (num1, num2) {
+    if(num2 === 0){
+        this.table.push("divided " + num1 + " by " + num2 + " is incorrect");
+        return "can not divide by 0";
+    }else {
+
+        var result = num1 / num2;
+        this.table.push("divided " + num1 + " by " + num2 + " got " + result);
+        return result;
+    }
+}
+
+
+Calculator.prototype.printOperations = function () {
+
+    this.table.forEach(function(element, index, array){
+        console.log(element);
+    });
+
+}
+
+Calculator.prototype.clearOperations = function () {
+    this.table = [];
+}
+
+
+var calculator = new Calculator();
+
+calculator.add(1,2);
+calculator.multiply(2,-5);
+console.log(calculator.divide(3,5));
+console.log(calculator.divide(3,0));
+calculator.substract(30,-90);
+
+calculator.printOperations();
+
+calculator.clearOperations();
+
+calculator.printOperations();
+
+calculator.add(1000,1010);
+
+calculator.printOperations();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
