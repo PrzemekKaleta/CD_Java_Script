@@ -62,10 +62,25 @@ console.log("CL 3:");
 
     var home2 = document.getElementById("home");
     var home1 = document.querySelector("#home");
-    
+
     console.log(home1);
     console.log(home2);
 
+    var liWithoutDataDirection = document.querySelector("li:not([data-direction])");
+    console.log(liWithoutDataDirection);
 
+    var firstWithClassBlock = document.querySelector(".block");
+    console.log(firstWithClassBlock);
+
+console.log("CL 4:");
+
+    var allLiInTagNav = document.querySelectorAll("nav li");
+    console.log(allLiInTagNav.length);
+
+    var allParagrafsAtDiv = document.querySelectorAll("div p");
+    console.log(allParagrafsAtDiv.length);
+
+    var allDivsAtTagArticle = document.querySelectorAll("article div");
+    console.log(allDivsAtTagArticle.length);
 
 });
