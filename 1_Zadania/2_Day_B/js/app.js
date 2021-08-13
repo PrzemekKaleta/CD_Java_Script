@@ -46,7 +46,33 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // 4
 
+    console.log("CL 4:");
     console.log(homeElement.id);
+
+    // 5
+
+    console.log("CL 5:");
+    for(var i=0; i < childElements.length; i++){
+        console.log(childElements[i].tagName);
+    }
+
+    // 6
+    console.log("CL 6:");
+    for(var i=0; i < links.length; i++){
+        console.log(links[i].dataset);
+        console.log(links[i].dataset.color);
+    }
+
+
+    // 7
+    console.log("CL 7:");
+    console.log(banner.classList);
+    var classListOfBanner = banner.classList;
+    for(var i = 0; i < classListOfBanner.length; i++){
+        console.log(classListOfBanner[i]);
+    }
+
+    console.log(banner.className);
 
 
 });
