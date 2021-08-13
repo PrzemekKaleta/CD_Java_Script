@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     aEdge.href = "https://www.microsoft.com/pl-pl/edge";
     divEdge.style.backgroundImage = "url(\"assets/img/edge.png\")";
 
-    //TEST 2
+    //TEST 3
 
 
 });
