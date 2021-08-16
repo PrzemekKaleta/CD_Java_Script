@@ -111,13 +111,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("CL: 6");
 
     var liEx6 = document.querySelectorAll(".ex6 li");
-    
+
 
     for(var i = 0 ; i < liEx6.length; i++){
         //A
         liEx6[i].dataset.id = 1 + i;
         //B
         liEx6[i].setAttribute("id", i + 1);
+
+        //C
     }
 
 
