@@ -73,7 +73,57 @@ document.addEventListener("DOMContentLoaded", function () {
     aEdge.href = "https://www.microsoft.com/pl-pl/edge";
     divEdge.style.backgroundImage = "url(\"assets/img/edge.png\")";
 
-    //TEST 3
+    console.log("CL: 4");
+
+    var spanEx4 = document.querySelectorAll(".ex4 span");
+
+    for(var i = 0 ; i < spanEx4.length; i++){
+
+        switch (spanEx4[i].id) {
+            case "name":
+                spanEx4[i].innerHTML = "Jan Nowak";
+                break;
+            case "fav_color":
+                spanEx4[i].innerHTML = "Black";
+                break;
+            case "fav_meal":
+                spanEx4[i].innerHTML = "Pizza";
+                break;
+            default:
+                spanEx4[i].innerHTML = "No value";
+        }
+
+        console.log(spanEx4[i].id);
+    }
+
+    console.log("CL: 5");
+
+    var ulEx5 = document.querySelector(".ex5 ul");
+
+    ulEx5.classList.add("menu");
+    var liFromUlEx5 = ulEx5.getElementsByTagName("li");
+
+    for(var i=0; i < liFromUlEx5.length; i++){
+        liFromUlEx5[i].classList.add("menuElement");
+        liFromUlEx5[i].classList.remove("error");
+    }
+
+    console.log("CL: 6");
+
+    var liEx6 = document.querySelectorAll(".ex6 li");
+    
+
+    for(var i = 0 ; i < liEx6.length; i++){
+        //A
+        liEx6[i].dataset.id = 1 + i;
+        //B
+        liEx6[i].setAttribute("id", i + 1);
+    }
+
+
+
+
+
 
 
 });
