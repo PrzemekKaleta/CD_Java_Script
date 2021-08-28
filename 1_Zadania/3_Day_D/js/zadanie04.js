@@ -1,22 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-        var panelBody = document.querySelector(".panel-body");
+    var select = document.querySelector(".form-control");
+    var images = document.querySelector(".page-header");
+    var form = document.querySelector("form");
+    var selectChildren = select.children;
 
-        var choice = document.querySelector(".form-control");
 
-        var images = document.querySelectorAll(".page-header img");
 
-        var tab = [2, 0, 1];
+    form.addEventListener("change", function () {
 
-        panelBody.addEventListener('click', function () {
-            for(var i = 0 ; i<choice.length ; i ++){
-                if(choice[i].selected){
-                    images[tab[i]].style.display = "";
-                }else{
-                    images[tab[i]].style.display = "none";
-                }
-            }
+        checkForm();
 
-        })
+    });
+
+
+    var checkForm = function(){
+        if(selectChildren[0].selected){
+            images.children[1].style.display = "none";
+            images.children[2].style.display = "none";
+            images.children[3].style.display = "block";
+        }else if(selectChildren[1].selected){
+            images.children[1].style.display = "block";
+            images.children[2].style.display = "none";
+            images.children[3].style.display = "none";
+        }       if(selectChildren[2].selected){
+            images.children[1].style.display = "none";
+            images.children[2].style.display = "block";
+            images.children[3].style.display = "none";
+        }
+    };
+
+    checkForm();
+
 
 });

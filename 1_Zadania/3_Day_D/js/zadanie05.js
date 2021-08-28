@@ -1,54 +1,62 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    var inputEmail = document.getElementById("email");
+    var inputName = document.getElementById("name");
+    var inputSurname = document.getElementById("surname");
+    var inputPass1 = document.getElementById("pass1");
+    var inputPass2 = document.getElementById("pass2");
+    var inputAgree = document.getElementById("agree");
+
     var form = document.querySelector("form");
 
-    var mail = form.querySelector("#email");
-    var name = form.querySelector("#name");
-    var surname = form.querySelector("#surname");
-    var password1 = form.querySelector('#pass1');
-    var password2 = form.querySelector('#pass2');
-    var agree = form.querySelector('#agree');
+    form.addEventListener("change", function () {
 
+        console.log(checkForm());
+    });
 
-    form.addEventListener('submit', function (event) {
-        console.log(agree.checked);
+    var checkForm = function () {
 
-        var patt1 = /@{1,1}/i;
-
-        if(!patt1.test(mail.value)){
-            alert("niepoprawna ilość @ w mailu");
-            event.preventDefault();
-        }
-        if (name.value.toString().length < 5) {
-            alert("za krótkie imię");
-            event.preventDefault();
-        }
-        if (surname.value.toString().length < 5) {
-            alert("za krótkie nazwisko");
-            event.preventDefault();
-        }
-        if (!password1.value==password2.value) {
-            alert("hasło nie zostało poprawie powtórzone");
-            event.preventDefault();
+        var valueEmail = inputEmail.value;
+        if (valueEmail.indexOf("@") == -1) {
+            return false;
         }
 
-        var patt2 = /\d+/i;
-        var patt3 = /[^\d\W]+/i;
-
-        var test1 = patt2.test(password1.value);
-        var test2 = patt3.test(password1.value);
-        var test3 = (password1.value.length>4);
-
-        if (!(test1*test2*test3)){
-            alert("musi zawierać conajmnej jedną literę, jedną cyfrę i mieć conajmniej 5 znaków");
-            event.preventDefault();
+        var valueName = inputName.value;
+        if (valueName.trim().length < 5) {
+            return false;
         }
 
-        if (!agree.checked) {
-            alert("aby przejść dalej należy wyrazić zgodę na warunki");
-            event.preventDefault();
+        var valueSurname = inputSurname.value;
+        if (valueSurname.trim().length < 5) {
+            return false;
         }
 
-    },true);
+        var valuePass1 = inputPass1.value;
+        var valuePass2 = inputPass2.value;
+
+        if (valuePass1 != valuePass2) {
+            return false;
+        }
+
+
+        var regex1 = /[a-z]|[A-Z]/g;
+        var regex2 = /[0-9]/g;
+
+        if (!(regex1.test(valuePass1) || !(regex2.test(valuePass1)))) {
+            return false;
+        }
+        ;
+
+
+        if (!inputAgree.checked) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+
+
 
 });
