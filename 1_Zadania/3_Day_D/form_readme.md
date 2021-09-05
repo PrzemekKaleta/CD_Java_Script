@@ -21,7 +21,7 @@ Zadanie polega na walidacji kart kredytowych wpisywanych w formularz na stronie.
 Nazwa karty ma być wpisana, jak tylko jest możliwe jej ustalenie.  
 Poprawność karty ma być pokazana po wpisaniu odpowiedniej liczby cyfr.  
 
-![Przyklad](../3_Day_D/tasks_assets/credit_card.png)
+![Przyklad](tasks_assets/credit_card.png)
 
 #### Zasady rozpoznawania kart:
 1. Karty Visa zaczynają się od cyfry `4`.
