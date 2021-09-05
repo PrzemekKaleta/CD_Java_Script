@@ -42,7 +42,7 @@ $(function(){
         collorMe(newLi);
         ulMain.append(newLi);
 
-    }
+    };
 
 //2
 
